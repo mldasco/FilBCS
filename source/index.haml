@@ -1,0 +1,36 @@
+.ornament
+.container
+  .main
+    = partial("modals")
+
+    %h1 FilBCS <span>Filipino Badminton Club of Sydney</span>
+    .section-wrapper
+      %section
+        %article.one
+          = partial("home")
+        %article.two
+          = partial("games")
+        %article.three
+          = partial("events")
+        %article.four
+          = partial("members")
+        %article.five
+          = partial("gallery")
+        %article.six
+          = partial("contacts")
+    %nav
+      %h2.logo FilBCS
+      %ul
+        %li
+          .home
+        %li
+          .games
+        %li.logo-space
+          .events
+        %li
+          .members
+        %li
+          .gallery
+        %li
+          .contacts
+

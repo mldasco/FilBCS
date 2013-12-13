@@ -1,0 +1,106 @@
+@import compass
+@import compass/reset
+@import compass/layout
+
+body
+  background: $body-bg url('/images/bg_main.jpg') repeat left top
+
+.modal
+  // Display none by default
+  display: none
+
+  z-index: 100
+  position: absolute
+  left: 5%
+  top: 5%
+  width: 90%
+  height: 90%
+  background: rgba(0, 0, 0, 0.8)
+  border: 3px solid #ccc
+  $taskbar-height: 30px
+  .taskbar
+    height: $taskbar-height
+    background: rgba(0, 0, 0, 0.6)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+    .close
+      display: block
+      float: right
+      padding-right: 10px
+      height: $taskbar-height
+      font-size: 18px
+      line-height: 30px
+      a
+        color: white
+        text-decoration: none
+        &:hover
+          color: $theme-color
+  .content
+    color: white
+    padding: 20px
+
+.ornament
+  background: transparent url('/images/bg_ornament.png') no-repeat left top
+  width: 908px
+  height: 375px
+  margin-left: -454px
+  position: absolute
+  left: 50%
+  top: 280px
+
+.main
+  position: relative
+  margin-left: -379px
+  left: 50%
+  top: 90px
+  border: 4px solid $border-light
+  background: $body-bg url('/images/bg_content.jpg') no-repeat left top
+  width: 758px
+  height: 358px + 86px
+
+$article-width: 730px
+$article-height: 327px
+$article-left-margin: 15px
+$number-of-articles: 6
+$gutter: 16px
+$padding: 16px
+$trailer: 8px
+
+.section-wrapper
+  position: absolute
+  top: 0
+  left: 0
+  width: 758px
+  height: $article-height
+  margin-top: 15px
+  overflow: hidden
+section
+  position: absolute
+  top: 0
+  left: $article-left-margin
+  height: $article-height
+  width: $number-of-articles * ($article-width + $article-left-margin)
+  article
+    +float(left)
+    width: $article-width
+    min-height: $article-height
+    margin-right: $article-left-margin
+    .panel
+      padding: $padding
+      background: rgba(0, 0, 0, 0.5)
+      width: $article-width - ($padding * 2)
+      height: $article-height
+      overflow: auto
+      .part
+        +pie-clearfix
+        clear: both
+        margin-bottom: $trailer
+      &.no-scroll
+        overflow: hidden
+      &.double
+        +float(left)
+        width: ($article-width / 2) - ($gutter / 2) - ($padding * 2)
+        &:first-of-type
+          margin-right: $gutter
+
+input[type='text']
+  color: #333
