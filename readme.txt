@@ -4,3 +4,7 @@ To get up and running:
 2) middleman server
 3) Goto http://localhost:4567/
 
+To Build:
+middleman build
+
+
