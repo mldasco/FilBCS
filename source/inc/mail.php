@@ -5,15 +5,17 @@ $phone=$_POST['phone'];
 $message=$_POST['message'];
 
 
-$ToEmail = "secretariat@filbcs.org.au, chhs1_cts@filbcs.org.au";
-//$ToEmail = "m.dasco@gmail.com";
+$ToEmail = "secretariat@filbcs.org.au, all_cts@filbcs.org.au";
 $ToSubject = "Message from FilBCS Website";
 
 $EmailBody =   "Name: $name\n 
 		Email: $email\n
 		Phone: $phone\n
-		Message: $message\n";
-
+		Message: $message\n
+		
+		
+		Note to CTs: This is FYI only - please leave responses to the current allocated secretariat or designated CT.";
+		
 $Message = $EmailBody;
 
 $headers .= "Content-type: text; charset=iso-8859-1\r\n";
